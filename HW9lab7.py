@@ -1,11 +1,8 @@
-# Programmers:  Amanda Carrico and Hillary Nguyen
-# Course:  CS151, Dr. Olsen
-# Due Date: 3/29/22
-# Lab Assignment: 7
-# Problem Statement:  Create a program to display the distribution of rolls of two dice.
-# Data In: number of times the user wants to roll the two dice
-# Data Out: histogram displaying the distribution of the sums of the values rolled by the two dice
-# Credits: Class notes and videos
+# just wanted to look at this to try to see what each part did in the print_results function
+# wanted to see if anything else would work and saw that i couldve used what we learned about strings
+# i still don't get what the bottom print() does but i know without it the formatting is all off
+# i understand now that "end" allows us to not have a space between one statement and the next
+# (other than that I am not sure)
 
 # import module to use the function to get a random number between two values
 import random
@@ -20,6 +17,7 @@ def roll():
     return sum
 
 # function for printing out the "histogram"
+# changed to see what else worked
 def print_results(numbers):
     # print the list that contains the number of times each sum is rolled (list goes from 0 to 12) for user
     print(numbers)
@@ -29,15 +27,15 @@ def print_results(numbers):
         j = str(i)
         print("Sum of", j + ":", "*"*(numbers[i]))
 
-
-for i in range(2, len(numbers)):
-    print("Sum of ", end='')
-    print(i, end='')
-    print(": ", end='')
+# what was in print_results
+#for i in range(2, len(numbers)):
+ #   print("Sum of ", end='')
+  #  print(i, end='')
+   # print(": ", end='')
     # for each index print one "*" for each number at the index (ex: sum of 2 at index 2 is "Sum of 2:" "**")
-    for i in range(0, numbers[i]):
-        print('*', end='')
-    print()
+   # for i in range(0, numbers[i]):
+    #    print('*', end='')
+   # print()
 
 # function for adding a number (+1) to the corresponding index each time a roll results in the two dice summing to that number
 # (ex: one die rolls a 2 and the other rolls a 3, sum = 5 so at index 5 we add 1)

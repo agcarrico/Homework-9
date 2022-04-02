@@ -88,8 +88,22 @@ while q < list_length:
     list.append(a)
     q+=1
 # print list for user to see
-print(list)
+print("Here is the list storing the number of randomly generated numbers you requested:", list)
 
+# for loop to print the "+" and "-" signs for user, output statements for HCI reasoning
+if len(list) < 12:
+    print("This is a chart that shows what value (random number) was at each index in the list:")
+    for i in range(len(list)):
+        value = int(list[i])
+        var = str(value)
+        j = str(i)
+        print("Index", j + ":", end=" ")
+        if "-" in var:
+            print("-"*-value)
+        else:
+            print("+"*value)
+
+# for loop to count how many of each value is in the list
 list2 = list
 count_list = []
 number_list = []
@@ -102,21 +116,17 @@ for i in range(len(list2)):
         for n in range(i+1, len(list2)):
             if list2[n] == list2[i]:
                 list2[n] = "0"
-            print(list2)
+
+# print the list of different numbers along with the list of how many times each was generated for user
 print("This is a list of all of the different numbers that were randomly generated:", number_list)
 print("This is a list of all of the times each number from the original list showed up, index corresponds to above printed list:", count_list)
 
-for i
+# output statement to tell user what is happening and use for loop to print chart showing how many times each number was
+# randomly generated
+print("This is a chart showing how many times each number was randomly generated:")
+for i in range(len(number_list)):
+    print("The number", number_list[i], end=" ")
+    print("*"*(count_list[i]))
 
-# for loop to print the "+" and "-" signs for user
-for i in range(len(list)):
-    value = list[i]
-    var = str (value)
-    j = str(i)
-    print("Random number", j + ":", end=" ")
-    if "-" in var:
-        print("-"*-value)
-    else:
-        print("+"*value)
 # thank user for using program
 print("Thank you for using this program. Goodbye!")
